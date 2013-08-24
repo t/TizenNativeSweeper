@@ -124,16 +124,16 @@ TizenNativeSweeperForm::InitBoard(void)
 
 	srand((unsigned int)time(NULL));
 	for(int i = 0; i < CELL_MINE_COUNT; i++){
-		//while(true){
+		while(true){
 			int r = rand() % (CELL_X_COUNT * CELL_Y_COUNT);
 			Cell * cell = cells[r];
-			//if(! cell->is_mine){
+			if(! cell->is_mine){
 				cell->is_mine = true;
 				AppLog("Mine is x:[%d] y:[%d]\n", cell->x, cell->y);
 
-			//	break;
-			//}
-		//}
+				break;
+			}
+		}
 	}
 
 }
